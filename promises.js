@@ -1,3 +1,8 @@
+//JS Promise challenge
+
+// reverseText( string input , true/false )
+// takes user input string and returns the reverse
+
 function reverseText(text, callback) {
   var reversePromise = new Promise(function(res, rej){
     if (callback) {
@@ -17,6 +22,9 @@ function reverseText(text, callback) {
     console.log("An error has occured: " + rej);
   });
 }
+
+// capText(string input, true/false)
+// takes user input and uppercases all characters in string
 
 function capText (text, callback) {
   var capPromise = new Promise(function(res, rej){
