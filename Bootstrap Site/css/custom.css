@@ -1,0 +1,107 @@
+body {
+    background-color: #d5e0e8;
+    background-image: url("../images/wallpaper2.gif");
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+/* carousel fonts */
+h2 {
+        margin-top: 5%;
+}
+
+h3 {
+    font-size: 400%;
+    vertical-align: middle;
+    font-family: 'Lobster';
+}
+
+h4 {
+    font-family: 'Lobster';
+    font-weight: bold;
+    font-size: 200%;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+.card-img-top {
+    height: 100%
+
+    width: auto;
+}
+
+.card-header {
+    background-color: white;
+    border-bottom-color: rgba(0,0,0,0);
+}
+
+.card-footer {
+    border-top-color: rgba(0,0,0,0);
+    background-color: white;
+    text-align: right;
+}
+
+.btn {
+    background-color: #57b25a;
+}
+
+.btn-primary{
+    border-color: rgba(0,0,0,0);
+}
+
+.my-4 {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+    font-family: 'Lobster';
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    font-size: 300%;
+    color: #075c2f;
+}
+
+.carousel-caption{
+    text-shadow: 0px 0px 5px #6b6b6b;
+    font-family: Helvetica;
+    top: 35%;
+    bottom: 25%;
+}
+
+.card {
+    font-family: Helvetica;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+.card-text{
+    font-family: sans-serif;
+}
+
+.card-title{
+    font-family: sans-serif;
+}
+
+a {
+    color: black;
+}
+
+.navbar-brand {
+    font-family: 'Lobster';
+    font-size: 150%
+}
+
+#contact{
+    font-size: 300%
+}
+
+#about {
+    background-color: rgba(255,255,255,0.5);
+    color: #075c2f;
+
+}#contactBG {
+    background-color: rgba(255,255,255,0.5);
+}
+
+#text {
+    font-size: 150%;
+}
