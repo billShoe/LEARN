@@ -10,6 +10,32 @@ var gameState = {
   gamesWonO: 0,
 }
 
+//Brute force check for tie, because I have given up
+function checkForTie(){
+        let chk1 = false;
+        let chk2 = false;
+        let chk3 = false;
+        let tie = false;
+        if(gameState.board[0] != ""  && gameState.board[1] != "" &&gameState.board[2] != "")
+        {
+            chk1 = true;
+        }
+        if(gameState.board[3] != ""  && gameState.board[4] != "" &&gameState.board[5] != "")
+        {
+            chk2 = true;
+        }
+        if(gameState.board[6] != ""  && gameState.board[7] != "" &&gameState.board[8] != "")
+        {
+            chk3 = true;
+        }
+
+    if(chk1 == true && chk2==true && chk3==true) {
+        tie = true;
+        return tie;
+    }
+    return false;
+}
+
 function checkForWinner(){
   var winningCombos = [
     [0, 1, 2],
@@ -40,6 +66,8 @@ function handleClick(index){
     render(gameState)
 
     let winner = checkForWinner()
+    let tie = checkForTie();
+
     if(winner){
       render(gameState)
       if (winner == 'O') {
@@ -48,9 +76,19 @@ function handleClick(index){
       else {
         gameState.gamesWonX += 1
       }
-            alert(`${winner} is the winner!\nGame #${gameState.gameNum}\nX has won ${gameState.gamesWonX} games.\nO has won ${gameState.gamesWonO} games.`)
+        alert(`${winner} is the winner!\nGame #${gameState.gameNum}\nX has won ${gameState.gamesWonX} games.\nO has won ${gameState.gamesWonO} games.`)
+        tie = false;
     }
     render(gameState)
+
+    if(tie) {
+            alert(`No one wins!\nGame #${gameState.gameNum}\nX has won ${gameState.gamesWonX} games.\nO has won ${gameState.gamesWonO} games.`);
+            gameState.gameNum += 1;
+            gameState.board = [
+              "","","","","","","","",""
+            ]
+    }
+
 
     if(winner){
       gameState.gameNum += 1;
