@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- link to bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- link to fonts & master CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Montserrat:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="PigLatin_Mob.css">
+    <title>Pig Latin Translator</title>
+  </head>
+  <body>
+      <!-- Image and text -->
+      <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand">
+          <h1><img src="https://maxcdn.icons8.com/Share/icon/Animals//pig1600.png"  width="50" height="50" class="d-inline-block align-top" alt="">
+        - Latin</h1>
+        </a>
+      </nav>
+      <div id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h1>Rules of Pig Latin</h1>
+              </a>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+            <div class="card-block">
+                <ul>
+                    <li>For words beginning with a vowel, add "way" to the end.</li>
+                    <li>For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".</li>
+                    <li>If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!</li>
+                    <li>For words beginning with "y", treat "y" as a consonant</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col row justify-content-around fluff">
+                      <h3><label for="textarea">Enter Phrase</label></h3><br />
+                  <textarea rows="4" cols="33" id="userInput" type="text" name="English" value=""></textarea><br />
+          </div>
+          <div class="col row justify-content-around fluff">
+              <h3>Pig Latin</h3>
+              <br/>
+                <p id="displayTrans"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+<!--Blank-->
+          </div>
+          <div id="buttonFluff" class="col">
+            <button class="btn btn-primary btn-lg btn-block" onclick="onClick()" >Translate</button>
+          </div>
+          <div class="col">
+<!--Blank-->
+          </div>
+        </div>
+      </div>
+<!-- jquery, bootstrap, and JS files  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="PigLatin_Mob.js"></script>
+  </body>
+</html>

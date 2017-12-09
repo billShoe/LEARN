@@ -1,0 +1,18 @@
+/*
+/*font used for headings*/
+h1, h3{
+    font-family: 'Gloria Hallelujah', cursive;
+}
+/*font used for body*/
+li , p, button{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fluff{
+    padding: 35px;
+}
+
+table{
+    border-width: 10px solid thick;
+    border-color: black;
+}
