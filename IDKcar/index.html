@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Car testing Zone</title>
+    <!-- <script type="text/javascript" src="car.json"></script> -->
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>CAR GAME</h1>
+    <div class="container">
+      <img id = "bg" src = "https://image.freepik.com/free-photo/road-with-a-buildings-and-park-background_1112-211.jpg" alt="Road Background" />
+      <div class='box'><img id= "car" class="transform" src="http://pngimg.com/uploads/porsche/porsche_PNG10628.png" alt="red car"></div>
+    </div>
+
+    <div class="button" id="buttons">
+      <button class='toggleButton' value='play'>Play</button>
+      <button type="button" name="button" onclick="makeCar()">Make a car</button>
+      <button type="button" name="button" onclick="accelerate()">Accelerate</button>
+      <button type="button" name="button" onclick="decelerate()">Decelerate</button>
+    </div>
+
+
+    <script src="index.js"></script>
+
+    <h2>Imagine you are going at: <span id="speedNow"></span> MPH</h2>
+
+  </body>
+</html>
