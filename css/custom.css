@@ -17,7 +17,7 @@ h3 {
 }
 
 h4 {
-    font-family: 'sans-serif';
+    font-family: 'Lobster';
     font-weight: bold;
     font-size: 200%;
     letter-spacing: 0.08em;
@@ -104,9 +104,4 @@ a {
 
 #text {
     font-size: 150%;
-}
-
-footer{
-	bottom: 0;
-	width: 100%;
 }
