@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.headerPic {
+  height: 160px;
+  margin-top: 10px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#mainTable{
+  background-color: #404856;
+  color: #dcdee2;
+}
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 32px;
+  }
+}
+
+  #top-image {
+  background:url('https://i.ytimg.com/vi/T40NSkd7Olc/maxresdefault.jpg') -25px -50px;
+  top:0;
+  width:100%;
+  z-index:0;
+    height:100%;
+    background-size: calc(100% + 50px);
+  }
+
+ .bottomBar{
+   position: static;
+   bottom: 0;
+   width: 700px;
+   height: 30px;
+ }
+
+.starwars{
+  color: yellow;
+  font-size: 2em;
+}
