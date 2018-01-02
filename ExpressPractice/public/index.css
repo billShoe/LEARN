@@ -1,0 +1,42 @@
+body {
+  background-color: #3c3c3c;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: lighter;
+  font-style: italic;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+}
+
+.fButton {
+  margin: 10px 5% 10px 5%;
+  width: 90%;
+  height: 3em;
+  font-size: 2em;
+}
+
+.fButton:hover {
+  cursor: pointer;
+  border-style: solid;
+  border-width: medium;
+  border-color: white;
+}
