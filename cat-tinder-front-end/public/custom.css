@@ -1,3 +1,9 @@
 #text-input {
   height: 200px;
 }
+
+.list-group-item {
+  border-width: thin;
+  border-color: cornsilk;
+  color: PapayaWhip
+}

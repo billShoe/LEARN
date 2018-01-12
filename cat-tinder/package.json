@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "babel-core": "^6.0.0",
+    "cors": "^2.8.4",
+    "express-validator": "^4.3.0",
     "mysql": "^2.15.0",
     "nodemon": "^1.14.10",
     "pg": "^6.1.5",

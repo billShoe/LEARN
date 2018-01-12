@@ -1,48 +1,46 @@
 import React, { Component } from 'react';
 import {
+  Alert,
   Button,
   Col,
+  ControlLabel,
+  FormGroup,
+  FormControl,
+  HelpBlock,
   Row
-} from 'react-bootstrap';
-import FormInput from '../components/FormInput';
-import CatStore from '../stores/catstore'
+} from 'react-bootstrap'
 
 class NewCat extends Component {
   constructor(props){
     super(props)
-    this.state={
-      cat: CatStore.getFields(),
-      errors: [],
-      alerts: []
+    this.state = {
+      form:{
+        name: '',
+        age: '',
+        enjoys: ''
+      }
     }
   }
 
   handleChange(event){
-    const target = event.target
-    const cat = this.state.cat
-    cat[target.name] = target.value
-    this.setState({
-      cat: cat
-    })
+    const formState = Object.assign({}, this.state.form)
+    formState[event.target.name] = event.target.value
+    this.setState({form: formState})
   }
 
-  validate(){
-    CatStore.validate()
-    this.setState({alerts: CatStore.getAlerts()})
-    this.setState({errors: CatStore.getErrors()})
+  handleSubmit(){
+    this.props.onSubmit(this.state.form)
   }
 
-  handleSubmit(event){
-    event.preventDefault()
-    this.validate()
-  }
-
-  displayError(){
-    let arr = this.state.alerts;
-    let arrItem = arr.map((print, i) =>
-      <div key = {i} className='alert alert-danger'>{print}</div>
-    );
-    return arrItem;
+  errorsFor(attribute){
+    var errorString = ""
+    if(this.props.errors){
+      const errors = this.props.errors.filter(error => error.param === attribute )
+      if(errors){
+        errorString = errors.map(error => error.msg ).join(", ")
+      }
+    }
+    return errorString === "" ? null : errorString
   }
 
   render() {
@@ -50,47 +48,72 @@ class NewCat extends Component {
       <form>
         <Row>
           <Col xs={6}>
-            {
-              this.displayError()
+            {this.props.errors &&
+              <Alert bsStyle="danger">
+                Please check the form and try again
+              </Alert>
             }
           </Col>
         </Row>
         <Row>
-          <Col sm={3} >
-            <FormInput
-              name='name'
-              label='Name'
-              value={this.state.cat.name}
-              onChange={this.handleChange.bind(this)}
-              errors={this.state.errors.name}
-            />
+          <Col sm={3}>
+            <FormGroup
+              id="name-form-group"
+              validationState={this.errorsFor('name') && 'error'}>
+              <ControlLabel id="name">Name</ControlLabel>
+              <FormControl
+                type="text"
+                name="name"
+                value={this.state.form.name}
+                onChange={this.handleChange.bind(this)}
+              />
+              {this.errorsFor('name') &&
+                <HelpBlock id="name-help-block">{this.errorsFor('name')}</HelpBlock>
+              }
+            </FormGroup>
           </Col>
+
           <Col sm={1}>
-            <FormInput
-              type= "number"
-              name='age'
-              label='Age'
-              value={this.state.cat.age}
-              onChange={this.handleChange.bind(this)}
-              errors={this.state.errors.age}
-            />
+            <FormGroup
+              id="age-form-group"
+              validationState={this.errorsFor('age') && 'error'}>
+              <ControlLabel id="age">Age</ControlLabel>
+              <FormControl
+                type="number"
+                name="age"
+                value={this.state.form.age}
+                onChange={this.handleChange.bind(this)}
+              />
+
+              {this.errorsFor('age') &&
+                <HelpBlock id="age-help-block">{this.errorsFor('age')}</HelpBlock>
+              }
+            </FormGroup>
           </Col>
         </Row>
 
         <Row>
           <Col sm={4}>
-            <FormInput
-              name='enjoys'
-              label='Enjoys'
-              value={this.state.cat.enjoys}
-              onChange={this.handleChange.bind(this)}
-              errors={this.state.errors.enjoys}
-            />
+            <FormGroup
+              id="enjoys-form-group"
+              validationState={this.errorsFor('enjoys') && 'error'}>
+              <ControlLabel id="enjoys">Enjoys</ControlLabel>
+              <FormControl
+                id="text-input"
+                componentClass='textarea'
+                name="enjoys"
+                value={this.state.form.enjoys}
+                onChange={this.handleChange.bind(this)}
+              />
+              {this.errorsFor('enjoys') &&
+                <HelpBlock id="enjoys-help-block">{this.errorsFor('enjoys')}</HelpBlock>
+              }
+            </FormGroup>
           </Col>
         </Row>
 
         <Row>
-          <Col sm={3}>
+          <Col sm={2}>
             <Button
               onClick={this.handleSubmit.bind(this)}
             id="submit">Create Cat Profile</Button>

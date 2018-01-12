@@ -17,3 +17,18 @@ describe("App", ()=>{
     })
   })
 })
+
+it("Validates name when creating cat", ()=>{
+  return request(app)
+    .post("/cats")
+    .send({
+      age: 2,
+      enjoys: "Food!"
+    })
+    .then(response =>{
+      expect(response.statusCode).toBe(400)
+      const error = response.body.errors.validations[0]
+      expect(error.param).toBe('name')
+      expect(error.msg).toBe('Is required')
+    })
+})

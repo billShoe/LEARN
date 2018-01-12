@@ -33,15 +33,6 @@ class CatStore{
     this.validateName('name')
     this.validateAge('age')
     this.validateEnjoy('enjoys')
-    this.finalCheck();
-  }
-
-  //checks for errors, prevents state change when "true"
-  //Placeholder for database submit
-  finalCheck() {
-    if (this.alerts.length === 0){
-      console.log(this.fields);
-    }
   }
 
   validateName(fieldName){
